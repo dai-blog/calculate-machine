@@ -11,53 +11,68 @@
 
 </head>
 <body>
+  <!-- ヘッダー -->
   <header>
-    
     <h1><span class="fas fa-calculator"></span>電卓アプリ</h1>
   </header>
+  <!-- /ヘッダー -->
 
+  <!-- 電卓部分 -->
   <section class="container">
 
-    <div class="display">
-      <p id="result">数字を入力してください</p>
-    </div>
+  <!-- ディスプレイ -->
+  <div class="display">
+    <p id="result">数字を入力してください</p>
+  </div>
+  <!-- /ディスプレイ -->
     
-    <div class="clear-row">
-      <ul>
-        <li id="clear">AC</li>
-        <li><span class="fas fa-backspace" id="backspace"></span></li>
-      </ul>
-    </div>
 
-    <div class="option">
-      <ul>
-        <li>÷</li>
-        <li>×</li>
-        <li>+</li>
-        <li>−</li>
-      </ul>
-    </div>
+  <!-- クリアボタン -->
+  <div class="clear-row">
+    <ul>
+      <li id="clear">AC</li>
+      <li><span class="fas fa-backspace" id="backspace"></span></li>
+    </ul>
+  </div>
+  <!-- /クリアボタン -->
 
-    <div class="number-box">
-      <ul>
-        <li>9</li>
-        <li>8</li>
-        <li>7</li>
-        <li>6</li>
-        <li>5</li>
-        <li>4</li>
-        <li>3</li>
-        <li>2</li>
-        <li>1</li>
-        <li></li>
-        <li>0</li>
-        <li></li>
-      </ul>
-      <button id="enter">=</button>
-    </div>
-  </section>
+  <!-- 四則演算ボタン -->
+  <div class="option">
+    <ul>
+      <li>÷</li>
+      <li>×</li>
+      <li>+</li>
+      <li>−</li>
+    </ul>
+  </div>
+  <!-- /四則演算ボタン -->
 
+  <!-- 数字ボタン -->
+  <div class="number-box">
+    <ul>
+      <li>9</li>
+      <li>8</li>
+      <li>7</li>
+      <li>6</li>
+      <li>5</li>
+      <li>4</li>
+      <li>3</li>
+      <li>2</li>
+      <li>1</li>
+      <li></li>
+      <li>0</li>
+      <li></li>
+    </ul>
+    <button id="enter">=</button>
+  </div>
+</section>
+<!-- /数字ボタン -->
+
+  <!-- /電卓部分 -->
+
+  <!-- クリック音SE -->
   <audio src="se/PC-Mouse04-01(L).mp3" ></audio>
+  <!-- /クリック音SE -->
 
   <script src="js/main.js"></script>
 </body>

@@ -1,3 +1,4 @@
+/* 全体 */
 * {
   margin: 0;
   padding: 0;
@@ -12,8 +13,14 @@ body {
   box-sizing: border-box;
 }
 
+li {
+  border: 1px solid rgba(0, 0, 0, 0.068);
+}
+/* /全体 */
 
-/* header */
+
+
+/* ヘッダー */
 header {
   background-color: rgb(255, 255, 255);
   color: rgb(17, 0, 255);
@@ -26,17 +33,28 @@ header h1 {
 .fa-calculator {
   margin-right: 8px;
 }
+/* /ヘッダー */
 
-/* content */
 
+
+/* 電卓部分 */
 .container {
   height: 500px;
   width: 70%;
   margin: 80px auto 0;
   background-color: #efefef;
   position: relative;
+  box-shadow: 12px 12px 120px -6px rgb(204, 204, 204);
 }
 
+.container li:hover, button:hover {
+  opacity: .6;
+  background-color: #fff;
+}
+
+
+
+/* 数字ボタン */
 .number-box {
   position: absolute;
   bottom: 0;
@@ -60,13 +78,9 @@ header h1 {
 .number-box li:nth-child(10), li:nth-child(12) {
   pointer-events: none;
 }
+/* /数字ボタン */
 
-
-.container li:hover, button:hover {
-  opacity: .6;
-  background-color: #fff;
-}
-
+/* イコールボタン */
 #enter {
   width: 30%;
   position: absolute;
@@ -76,9 +90,10 @@ header h1 {
   font-size: 40px;
   border: 4px solid rgba(0, 0, 0, 0.082);
 }
+/* /イコールボタン */
 
-/* option */
 
+/* オプション */
 .option {
   position: absolute;
   top: 32%;
@@ -97,8 +112,10 @@ header h1 {
   text-align: center;
   font-size: 40px;
 }
+/* オプション */
 
-/* clear-row */
+
+/* クリアボタン */
 .clear-row {
   position: absolute;
   top: 20%;
@@ -111,31 +128,35 @@ header h1 {
   display: flex;
   justify-content: space-between;
 }
+
 .clear-row li {
   width: 30%;
   text-align: center;
   font-size: 32px;
 }
+/* /クリアボタン */
 
-li {
-  border: 1px solid rgba(0, 0, 0, 0.068);
-}
 
+/* ディスプレイ */
 .display {
   position: absolute;
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 40%;
   background-color: black;
   color: #fff;
   padding: 8px;
-  text-align: right;
+  text-align: center;
   font-size: 22px;
   height: 36px;
 }
+/* /ディスプレイ */
 
-@media (max-width: 700px) {
+
+
+/* レスポンシブ */
+@media (max-width: 900px) {
   h1 {
     text-align: center;
     transform: translateX(-5%);
@@ -144,5 +165,9 @@ li {
   .container {
     width: 90%;
   }
-}
 
+  .display {
+    width: 80%;
+  }
+}
+/* /レスポンシブ */

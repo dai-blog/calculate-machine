@@ -1,18 +1,22 @@
 'use strict';
 {
+  // 定数
+  // ボタン
   const btn = document.querySelectorAll('li, button');
-  const se = document.querySelector('audio');
-  const backspace = document.getElementById('backspace');
-  const result = document.getElementById('result');
   const numbers = document.querySelectorAll('.number-box li');
-  const clear = document.getElementById('clear');
-  const options = document.querySelectorAll('.option li');
   const enter = document.getElementById('enter');
-
+  const options = document.querySelectorAll('.option li');
+  const clear = document.getElementById('clear');
+  const backspace = document.getElementById('backspace');
+  // ディスプレイ
+  const result = document.getElementById('result');
+  // クリック音
+  const se = document.querySelector('audio');
+  // 数字の配列
   const numberContent = [
     '9','8','7','6','5','4','3','2','1','' ,'0',''
   ];
-
+  // 四則演算の配列
   const optionContent = [
     '/', '*', '+', '-'
   ];
@@ -34,6 +38,8 @@
     });
     });
   
+  // 関数
+  // クリック音の関数
   const sound = function () {
     se.currentTime = 0.05;
     se.play();
@@ -42,7 +48,7 @@
   // 数を入力する関数
   const setNumber = function () {
     if (result.textContent.length > 12) {
-      result.textContent = '　　　桁数が多すぎます　　';
+      result.textContent = '--桁数が多すぎます。--';
       return;
     }
     if ( result.textContent === '数字を入力してください' || result.textContent === '0') {
@@ -55,7 +61,7 @@
 
   // オプションの関数
   const setOption = function () {
-    if (result.textContent.includes('/') || result.textContent.includes('*')|| result.textContent.includes('+')|| result.textContent.includes('-')|| result.textContent.includes(0)|| result.textContent.includes('数字を入力してください')) {
+    if (result.textContent.includes('/') || result.textContent.includes('*')|| result.textContent.includes('+')|| result.textContent.includes('-')|| result.textContent.includes('数字を入力してください')) {
       return;
     }
     result.textContent = result.textContent + optionContent[optionIndex];
@@ -63,9 +69,12 @@
 
 
   
+// イベント
 // ボタンのクリック音
   btn.forEach(function (button) {
-    button.addEventListener('click', sound);
+    if (window.matchMedia('(min-width: 767px)').matches) {
+      button.addEventListener('click', sound);
+    }
   });
 // 数を入力
   numbers.forEach(function (button) {
@@ -77,18 +86,18 @@
     button.addEventListener('click', setOption);
   });
 
-// クリア
+// クリアボタン
   clear.addEventListener('click', () => {
-    result.textContent = 0;
+    result.textContent = '0';
   });
 
+// イコールボタン
   enter.addEventListener('click', () => {
     result.textContent = eval(result.textContent);
   });
-
   
+// バックスペース
   backspace.addEventListener('click', () => {
     result.textContent = result.textContent.slice(0, -1);
   })
-
 }
