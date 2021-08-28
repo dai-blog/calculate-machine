@@ -92,10 +92,3 @@
   })
 
 }
-
-
-
-
-
-// var result = str.slice(0, -1);
-// console.log(result);
