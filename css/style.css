@@ -44,7 +44,7 @@ header h1 {
   margin: 80px auto 0;
   background-color: #efefef;
   position: relative;
-  box-shadow: 12px 12px 120px -6px rgb(204, 204, 204);
+  /* box-shadow: 12px 12px 120px -6px rgb(204, 204, 204); */
 }
 
 .container li:hover, button:hover {
