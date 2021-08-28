@@ -35,7 +35,7 @@
     });
   
   const sound = function () {
-    se.load();
+    se.currentTime = 0.05;
     se.play();
   };
 
